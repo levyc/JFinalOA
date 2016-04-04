@@ -1,0 +1,44 @@
+ <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${session.currentUser.username}</strong>
+                             </span> <span class="text-muted text-xs block">${session.currentUser.department}<b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">个人资料</a></li>
+                            <li><a href="contacts.html">联系方式</a></li>
+                            <li><a href="mailbox.html">邮箱</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/pages/front/login.html">退出登录</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>      
+        <li>
+                    <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">工作记录</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="${basePath}api/record/edit?access_token=${session.token}&recordType=工作总结">工作总结</a></li>
+                        <li><a href="${basePath}api/record/edit?access_token=${session.token}&recordType=工作计划">工作计划</a></li>
+                        <% if(session.sessionuser.classN==1||session.sessionuser.classN==2||session.sessionuser.classN==3){ %>
+                        <li><a href="${basePath}api/record/showSummary?access_token=${session.token}">查看员工工作总结</a></li>
+                        <li><a href="${basePath}api/record/showPlan?access_token=${session.token}">查看员工工作计划</a></li>
+                        <% } %>                        
+                    </ul>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-bar-chart-o"></i> <span class="nav-label">任务</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="${basePath}api/record/showTask?access_token=${session.token}">查看任务</a></li>
+                         <% if(session.sessionuser.classN==1||session.sessionuser.classN==2||session.sessionuser.classN==3){ %>
+                        <li><a href="${basePath}api/record/edit?access_token=${session.token}&recordType=安排任务">安排任务</a></li>
+                         <% } %>   
+                    </ul>
+                </li>
+                 </div>
+    </nav>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="${basePath}" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome to XyzOA System</title>
+/
+    <link href="${basePath}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${basePath}/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="${basePath}/css/animate.css" rel="stylesheet">
+    <link href="${basePath}/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="${basePath}/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <link href="${basePath}/css/style.css" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+   		<!-- 侧栏导航 -->
+        <%include("navigation_menu.html"){} %>
+
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <!-- 顶层导航 -->       
+        <%include("navigation_top.html"){} %>
+        </div>
+       
+        <!-- 判断是否显示总结列表 -->
+        <% if(summarys! !=null)   {  %>
+        <%include("listSummarys_part.html"){} %>
+        <% } %>
+        
+         <!-- 判断是否显示计划列表 -->
+        <% if(plans! !=null)   {  %>
+        <%include("listPlan_part.html"){} %>
+        <% } %>
+        
+         <!-- 判断是否显示任务列表 -->
+        <% if(tasks! !=null)   {  %>
+        <%include("listTasks_part.html"){} %>
+        <% } %>
+        
+         <!-- 判断是否显示个人总结列表 -->
+        <% if(ownSummarys! !=null)   {  %>
+        <%include("listOwnSummarys_part.html"){} %>
+        <% } %>
+        
+         <!-- 判断是否显示个人计划列表 -->
+        <% if(ownPlans! !=null)   {  %>
+        <%include("listOwnPlan_part.html"){} %>
+        <% } %>
+        
+         <!-- 判断是否显示个人任务列表 -->
+        <% if(ownTasks! !=null)   {  %>
+        <%include("listOwnTasks_part.html"){} %>
+        <% } %>
+        
+        <!-- 判断是否需要显示单个文章页面 -->
+        <% if(workSummaryModel! !=null || workPlanModel! !=null || workTaskModel! !=null)  {%>  
+        <%include("showArticlePage_part.html"){} %>
+        <% } %>
+        
+                        
+ <!----------------------------------------------------- 这里是footer ------------------------------------------------------->
+        <div class="footer">
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+  <!---------------------- Mainly scripts -------------------------------------------------------------------------->
+    <script src="${basePath}/js/jquery-2.1.1.js"></script>
+    <script src="${basePath}/js/bootstrap.min.js"></script>
+    <script src="${basePath}/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="${basePath}js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    
+   
+  <!----------------------- Custom and plugin javascript ----------------------------------------------------------->
+    <script src="${basePath}js/inspinia.js"></script>
+    <script src="${basePath}js/plugins/pace/pace.min.js"></script>
+    
+
+    <!-- SUMMERNOTE -->
+    <script src="js/plugins/summernote/summernote.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('.summernote').summernote();
+            
+            $("#work1").click(function(){
+            	location="writeRecord";
+            })
+
+       });
+        var edit = function() {
+            $('.click2edit').summernote({focus: true});
+        };
+        var save = function() {
+            var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
+            $('.click2edit').destroy();
+        };
+    </script>
+
+</body>
+
+</html>

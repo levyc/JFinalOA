@@ -1,0 +1,22 @@
+<div class="wrapper wrapper-content  animated fadeInRight blog">
+            <div class="row">
+                <% for(WorkSummaryModel in ownSummarys) {  %>
+                                    <div class="ibox">
+                        <div class="ibox-content">
+                            <a href="${basePath}api/record/showSummaryPage?access_token=${session.token}&recordTitle=${WorkSummaryModel.title}"   class="btn-link" ">
+                                <h2>
+                                    		${WorkSummaryModel.title}
+                                </h2>
+                            </a>
+                            <div class="small m-b-xs">
+                                <strong>${WorkSummaryModel.author}</strong> <span class="text-muted"><i class="fa fa-clock-o"></i>${WorkSummaryModel.creattime}</span>
+                            </div>
+                            <%  var body = strutil.getNinetyWords(WorkSummaryModel.body) ; %>
+                            <p>
+                                		${body}
+                            </p>
+                        </div>
+                    </div>     
+                 <% } %>                
+            </div>
+        </div>

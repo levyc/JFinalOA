@@ -1,0 +1,21 @@
+       <div class="wrapper wrapper-content  animated fadeInRight blog">
+            <div class="row">
+                <% for(WorkTaskModel in tasks) {  %>
+                                    <div class="ibox">
+                        <div class="ibox-content">
+                            <a href="${basePath}api/record/showTaskPage?access_token=${session.token}&recordTitle=${WorkTaskModel.title}"   class="btn-link" ">
+                                <h2>
+                                    		${WorkTaskModel.title}
+                                </h2>
+                            </a>
+                            <div class="small m-b-xs">
+                                <strong>${WorkTaskModel.author}</strong> <span class="text-muted"><i class="fa fa-clock-o"></i>${WorkTaskModel.creattime}</span>
+                            </div>
+                            <%  var body = strutil.getNinetyWords(WorkTaskModel.body) ; %>
+                            <p>
+                                		${body}
+                            </p>
+                        </div>
+                    </div>     
+                 <% } %>                
+            </div>

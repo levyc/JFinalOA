@@ -1,0 +1,21 @@
+ <div class="wrapper wrapper-content  animated fadeInRight blog">
+            <div class="row">
+                <% for(WorkPlanModel in plans) {  %>
+                                    <div class="ibox">
+                        <div class="ibox-content">
+                            <a href="${basePath}api/record/showPlanPage/?access_token=${session.token}&recordTitle=${WorkPlanModel.title}"   class="btn-link" ">
+                                <h2>
+                                    		${WorkPlanModel.title}
+                                </h2>
+                            </a>
+                            <div class="small m-b-xs">
+                                <strong>${WorkPlanModel.author}</strong> <span class="text-muted"><i class="fa fa-clock-o"></i>${WorkPlanModel.creattime}</span>
+                            </div>
+                            <%  var body = strutil.getNinetyWords(WorkPlanModel.body) ; %>
+                            <p>
+                                		${body}
+                            </p>
+                        </div>
+                    </div>     
+                 <% } %>                
+            </div>

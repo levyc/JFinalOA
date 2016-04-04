@@ -1,0 +1,76 @@
+	<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-10">
+					<h2>Article</h2>
+					<ol class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li><a>Miscellaneous</a></li>
+						<li class="active"><strong>Article</strong></li>
+					</ol>
+				</div>
+			</div>
+			<% if(workSummaryModel! !=null)  {%>
+			<div class="wrapper wrapper-content  animated fadeInRight article">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<div class="ibox">
+							<div class="ibox-content">
+								<div class="text-center article-title">
+									<span class="text-muted"><i class="fa fa-clock-o"></i>${workSummaryModel.author}<i
+										class="fa fa-clock-o">${workSummaryModel.creattime}</i></span>
+									<h1>${workSummaryModel.title}</h1>
+								</div>
+								<article>${workSummaryModel.body}</article>
+								<hr>
+								<div class="row"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% } %>
+			
+			<% if(workPlanModel! !=null){ %>
+			<div class="wrapper wrapper-content  animated fadeInRight article">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<div class="ibox">
+							<div class="ibox-content">
+								<div class="text-center article-title">
+									<span class="text-muted"><i class="fa fa-clock-o"></i>${workPlanModel.author}<i
+										class="fa fa-clock-o">${workPlanModel.creattime}</i></span>
+									<h1>${workPlanModel.title}</h1>
+								</div>
+								<article>${workPlanModel.body}</article>
+								<hr>
+								<div class="row"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% } %>
+         
+            <% if(workTaskModel! !=null){ %>
+			<div class="wrapper wrapper-content  animated fadeInRight article">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<div class="ibox">
+							<div class="ibox-content">
+								<div class="text-center article-title">
+									<span class="text-muted"><i class="fa fa-clock-o"></i>${workTaskModel.author}<i
+										class="fa fa-clock-o">${workTaskModel.creattime}</i>
+										<i
+										class="fa fa-clock-o">${workTaskModel.priority}</i>
+										<i
+										class="fa fa-clock-o">${workTaskModel.executeTime}</i></span>
+									<h1>${workTaskModel.title}</h1>
+								</div>
+								<article>${workTaskModel.body}</article>
+								<hr>
+								<div class="row"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% } %>
