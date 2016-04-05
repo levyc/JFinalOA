@@ -8,7 +8,8 @@
 <热烈欢迎前后端攻城狮贡献你们的代码>
 ##**使用方法**<br>
 - 在MySQL中执行sql文件“oa.sql”
-- 在OAConfig.java文件中修改数据库账户信息
+- 在OAConfig.java文件中修改数据库账户信息<br><br>
+
 ##**初期设计功能**<br>
 - 员工模块——添加成员，编辑成员信息
 - 周报模块——提交上周工作总结与本周工作计划；查看以往周报记录；
@@ -25,4 +26,6 @@
 
 
 ##**部分功能展示**
+![](https://raw.githubusercontent.com/levyc/JFinal-OA/master/images/QQ%E5%9B%BE%E7%89%8720160405170242.png)
 
+![](https://raw.githubusercontent.com/levyc/JFinal-OA/master/images/QQ%E5%9B%BE%E7%89%8720160405170313.png)
