@@ -62,7 +62,7 @@ public class CRUDTesting {
     public void tsetSaveSummary() {
         ArticleService articleService = new ArticleService();
         boolean summary = articleService.saveWorkSummary(1, "testtitle", "testbody", "2016",
-                "testAuthor", 88);
+                "testAuthor", 88,"");
         Assert.assertEquals(summary, true);
     }
 

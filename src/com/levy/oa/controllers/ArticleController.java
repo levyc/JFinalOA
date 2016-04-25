@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Clear;
 import com.levy.oa.config.ApiConfig;
 import com.levy.oa.interceptors.ApiInterceptor;
 import com.levy.oa.model.RecordModel;
@@ -76,7 +77,7 @@ public class ArticleController extends ApiController {
     
     /*********************** 重构V1.1 save record api***********************/
     public void saveSummary() {
-        saveRecord("WorkPlanModel");
+        saveRecord("WorkSummaryModel");
     }
 
     public void savePlan() {
@@ -98,6 +99,7 @@ public class ArticleController extends ApiController {
         }
         new ArticleService().saveRecord(record, currentUser);
     }
+    
     /*************重构V1.1 返回某部门的员工的名字***/
     public void getDepartmentStaffName(){
         
@@ -127,8 +129,10 @@ public class ArticleController extends ApiController {
      * 接收编辑器传来的记录的title和body参数，并与用户id，部门id，用户名 api=/api/record/write?access_token-title-body
      * 旧版本保存记录的接口，将于重构V1.1后删除
      */
+    @Clear
     public void write() throws UnsupportedEncodingException {
         String body = getPara("body");
+        String plan = getPara("plan");
         String title = ArticleService.getTitleWithTime();
         String createtime = DateUtils.format(new Date());
 
@@ -138,7 +142,7 @@ public class ArticleController extends ApiController {
         String sumbitTypeEn = getSessionAttr("sumbitTypeEn");
         if ("summary".equals(sumbitTypeEn)) {
             new ArticleService().saveWorkSummary(userid, title, body, createtime, author,
-                    departmentid);
+                    departmentid,plan);
         } else if ("plan".equals(sumbitTypeEn)) {
             new ArticleService().saveWorkPlan(userid, title, body, createtime, author,
                     departmentid);

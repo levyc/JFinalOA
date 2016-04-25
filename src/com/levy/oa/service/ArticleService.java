@@ -184,10 +184,10 @@ public class ArticleService{
     /*********************** 用于保存工作总结，计划，任务进数据库的旧函数，将于重构V1.1版本前后端分离后去除 *************************/
 
     public boolean saveWorkSummary(int userid, String title, String body, String createtime,
-            String author, int departmentid) {
+            String author, int departmentid,String plan) {
         // 新建一个worksummary的对象然后将title和body存进去
         return new WeekSummaryModel().set("title", title).set("body", body).set("userid", userid)
-                .set("creattime", createtime).set("author", author)
+                .set("creattime", createtime).set("author", author).set("plan", plan)
                 .set("departmentid", departmentid).save();
     }
 

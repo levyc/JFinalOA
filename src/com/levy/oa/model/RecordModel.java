@@ -13,7 +13,8 @@ public class RecordModel<M extends Model<M>> extends Model<M> {
     private String ID = "id";
     private String UserID = "userid";
     private String Title = "title";
-    private String body = "body";
+    private String summary = "summary";
+    private String plan = "plan";
     private String createTime = "creattime";
     private String author = "author";
     private String departmentId = "departmentid";
@@ -36,7 +37,7 @@ public class RecordModel<M extends Model<M>> extends Model<M> {
         return null;
     }
     
-    /** --------------------SeterGeter方法----------------------------------- **/
+    /** --------------------Seter&&Geter方法----------------------------------- **/
     public Integer getId() {
         return getInt(ID);
     }
@@ -64,11 +65,11 @@ public class RecordModel<M extends Model<M>> extends Model<M> {
     }
 
     public String getBody() {
-        return body;
+        return summary;
     }
 
     public RecordModel setBody(String Body) {
-        set(body, Body);
+        set(summary, Body);
         return this;
     }
 

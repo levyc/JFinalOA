@@ -9,6 +9,7 @@
 	href="http://cdn.staticfile.org/font-awesome/4.0.3/css/font-awesome.min.css"
 	rel="stylesheet">
 <link rel="stylesheet" href="${basePath}pages/templates/css/jquery.qeditor.css" type="text/css">
+<link rel="stylesheet" href="${basePath}css/bootstrap.min.css" type="text/css">
 <style type="text/css" media="screen">
 .textarea {
 	background-color: #ffffff;
@@ -38,7 +39,7 @@
 
 <!-- 在这里定义body的内容 -->
 <% var bodyContent = { %>
-  <div class="container">
+  <div class="container-fluid">
      <!--在这里定义提交类型 -->
     <h1>${sumbitType}</h1> 
     <p>
@@ -67,10 +68,30 @@
         </div>
       </div>
       <div class="control-group">
+      </div>
+      <div class="control-group">
         <label class="control-label" for="post_body">Body</label>
-        <div class="controls">
-           <textarea id="post_body" name="body" class="textarea" placeholder="Type your summary"></textarea>
-        </div>
+        <div class="row" style="margin:0;">
+                      <div id="ibox-con1" class="ibox-content  col-lg-4" style="clear:none; ">
+                          <h2 class="text-center">
+                              上周工作总结<br/>
+                          </h2>
+                            <div class="form-group">
+                              <label class="sr-only" for="name">文本框</label>
+                              <textarea  name="body" class="form-control" rows="40" style="resize:none;"></textarea>
+                            </div>
+  
+                      </div>
+                      <div id="ibox-con2" class="ibox-content col-lg-4 col-lg-offset-1" style="clear:none;  ">
+                          <h2 class="text-center">
+                              本周工作计划<br/>
+                          </h2>
+                            <div class="form-group">
+                              <label class="sr-only" for="name">文本框</label>
+                              <textarea name="plan" class="form-control" rows="40" style="resize:none;"></textarea>
+                            </div>          
+                      </div>
+                    </div>
       </div>
       <div class="control-group">
         <div class="controls">

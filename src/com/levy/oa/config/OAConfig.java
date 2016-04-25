@@ -18,6 +18,7 @@ import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.levy.oa.beetl.BeetlStrUtils;
 import com.levy.oa.controllers.ArticleController;
+import com.levy.oa.controllers.FileController;
 import com.levy.oa.controllers.IndexController;
 import com.levy.oa.controllers.UserController;
 import com.levy.oa.handler.BasePathHandler;
@@ -49,6 +50,7 @@ public class OAConfig extends JFinalConfig {
         me.add("/", IndexController.class);
         me.add("/api/record",ArticleController.class);
         me.add("/api/user",UserController.class);
+        me.add("/api/file",FileController.class);
     }
 
     @Override

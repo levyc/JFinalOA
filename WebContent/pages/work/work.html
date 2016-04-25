@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Welcome to XyzOA System</title>
+    <title>Welcome to JFinalOA</title>
 /
     <link href="${basePath}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${basePath}/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -90,7 +90,7 @@
     
 
     <!-- SUMMERNOTE -->
-    <script src="js/plugins/summernote/summernote.min.js"></script>
+    <script src="${basePath}js/plugins/summernote/summernote.min.js"></script>
 
     <script>
         $(document).ready(function(){
@@ -110,6 +110,27 @@
             $('.click2edit').destroy();
         };
     </script>
+    
+    <script>
+
+    $(document).ready(function () {
+
+        // Add slimscroll to element
+        $('.scroll_content').slimscroll({
+            height: '200px'
+        })
+
+        var iBoxH1=$(".row .ibox-con1").height();
+        var iBoxH2=$(".row .ibox-con2").height();
+          if (iBoxH1>iBoxH2) {
+            $(".row .ibox-con2").height(iBoxH1);
+          }else {
+            $(".row .ibox-con1").height(iBoxH2);
+          }
+
+    });
+
+</script>
 
 </body>
 
